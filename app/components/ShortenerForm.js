@@ -1,6 +1,7 @@
 "use client";
 import { Link2 } from "lucide-react";
 import React, { useState } from "react";
+// import CopyToClipboardButton from "./CopyToClipBoardButton";
 
 const ShortenerForm = () => {
   const [url, setUrl] = useState("");
@@ -17,6 +18,7 @@ const ShortenerForm = () => {
       alert("Error shortening URL");
     }
   }
+
   return (
     <div className="w-full">
       {/* Form */}
@@ -39,9 +41,10 @@ const ShortenerForm = () => {
         </button>
       </form>
       {shortenedUrl && (
-        <div className="bg-blue-100 p-4 mt-4 rounded-md w-9/12 text-center space-y-3">
+        <div className="bg-blue-100 p-4 mt-4 rounded-md w-9/12 text-center space-y-3 mx-auto">
           <p className="font-semibold">Shortened URL:</p>
-          <p className="text-copy break-all">{shortenedUrl}</p>
+          <p>{shortenedUrl}</p>
+          {/* <CopyToClipboardButton text={shortenedUrl} /> */}
         </div>
       )}
     </div>
