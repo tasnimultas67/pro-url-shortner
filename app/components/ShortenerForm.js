@@ -41,7 +41,7 @@ const ShortenerForm = () => {
         </button>
       </form>
       {shortenedUrl && (
-        <div className="bg-blue-100 p-4 mt-4 rounded-md w-9/12 text-center space-y-3 mx-auto">
+        <div className="bg-blue-100 p-4 mt-4 rounded-md w-3/12 text-center space-y-3 mx-auto">
           <p className="font-semibold">Shortened URL:</p>
           <p>{shortenedUrl}</p>
           {/* <CopyToClipboardButton text={shortenedUrl} /> */}
