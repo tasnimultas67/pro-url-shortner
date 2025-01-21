@@ -76,13 +76,21 @@ const ShortenerForm = () => {
           <div className="w-full space-y-3 flex flex-col items-stretch justify-between">
             {/* Original URL */}
             <div className="bg-white p-3 rounded-md shadow-xl text-sm space-y-2">
-              <p className="font-semibold">Your original URL:</p>
-              <p>{url}</p>
+              <p className="font-semibold">Original URL:</p>
+              <div>
+                <Link href={url} className="text-blue-600">
+                  {url}
+                </Link>
+              </div>
             </div>
             {/* Shorten URL */}
             <div className="bg-white p-3 rounded-md shadow-xl space-y-2 text-sm">
               <p className="font-semibold">Shortened URL:</p>
-              <p>{shortenedUrl}</p>
+              <div>
+                <Link href={shortenedUrl} className="text-blue-600">
+                  {shortenedUrl}
+                </Link>
+              </div>
               <button
                 className="bg-blue-500 text-white px-4 py-2 rounded-md"
                 onClick={() => {
