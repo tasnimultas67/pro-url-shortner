@@ -78,7 +78,7 @@ const ShortenerForm = () => {
             <div className="bg-white p-3 rounded-md shadow-xl text-sm space-y-2">
               <p className="font-semibold">Original URL:</p>
               <div>
-                <Link href={url} className="text-blue-600">
+                <Link href={url} target="_blank" className="text-blue-600">
                   {url}
                 </Link>
               </div>
@@ -87,7 +87,11 @@ const ShortenerForm = () => {
             <div className="bg-white p-3 rounded-md shadow-xl space-y-2 text-sm">
               <p className="font-semibold">Shortened URL:</p>
               <div>
-                <Link href={shortenedUrl} className="text-blue-600">
+                <Link
+                  href={shortenedUrl}
+                  target="_blank"
+                  className="text-blue-600"
+                >
                   {shortenedUrl}
                 </Link>
               </div>
