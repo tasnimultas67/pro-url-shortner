@@ -19,7 +19,7 @@ const QrCodeGenerator = () => {
         value={text}
         onChange={handleChange}
       />
-      <QRCodeCanvas value={text} /> // Update this line
+      <QRCodeCanvas value={text} />
     </div>
   );
 };
