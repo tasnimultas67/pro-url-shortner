@@ -27,7 +27,7 @@ const ShortenerForm = () => {
         className="flex justify-center items-center w-full"
       >
         <input
-          className="p-2 border border-gray-300 rounded-md text-sm w-6/12"
+          className="p-2 border border-gray-300 rounded-md text-sm w-full"
           type="text"
           placeholder="Enter URL"
           value={url}
