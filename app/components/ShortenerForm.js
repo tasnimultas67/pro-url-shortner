@@ -72,7 +72,7 @@ const ShortenerForm = () => {
         </button>
       </form>
       {shortenedUrl && (
-        <div className="bg-blue-100 p-4 mt-4 rounded-md w-full mx-auto flex flex-col md:flex-row gap-5 items-center md:justify-between justify-center">
+        <div className="bg-gray-200 p-4 mt-4 rounded-md w-full mx-auto flex flex-col md:flex-row gap-5 items-center md:justify-between justify-center">
           <div>
             <p className="font-semibold">Shortened URL:</p>
             <p>{shortenedUrl}</p>
@@ -87,7 +87,7 @@ const ShortenerForm = () => {
             </button>
           </div>
           {/* QR Code */}
-          <div className="space-y-2 p-3 bg-gray-100 rounded-md shadow-xl">
+          <div className="space-y-2 p-3 bg-white rounded-md shadow-xl">
             <div
               ref={qrCodeRef}
               className="bg-white p-2 rounded border border-gray-300"
