@@ -73,19 +73,28 @@ const ShortenerForm = () => {
       </form>
       {shortenedUrl && (
         <div className="bg-gray-200 p-4 mt-4 rounded-md w-full mx-auto flex flex-col md:flex-row gap-5 items-center md:justify-between justify-center">
-          <div>
-            <p className="font-semibold">Shortened URL:</p>
-            <p>{shortenedUrl}</p>
-            <button
-              className="bg-blue-500 text-white px-4 py-2 rounded-md"
-              onClick={() => {
-                navigator.clipboard.writeText(shortenedUrl);
-                alert("Copied to clipboard");
-              }}
-            >
-              <Copy className="size-4"></Copy>
-            </button>
+          <div className="w-full space-y-3 flex flex-col items-stretch justify-between">
+            {/* Original URL */}
+            <div className="bg-white p-3 rounded-md shadow-xl text-sm space-y-2">
+              <p className="font-semibold">Your original URL:</p>
+              <p>{url}</p>
+            </div>
+            {/* Shorten URL */}
+            <div className="bg-white p-3 rounded-md shadow-xl space-y-2 text-sm">
+              <p className="font-semibold">Shortened URL:</p>
+              <p>{shortenedUrl}</p>
+              <button
+                className="bg-blue-500 text-white px-4 py-2 rounded-md"
+                onClick={() => {
+                  navigator.clipboard.writeText(shortenedUrl);
+                  alert("Copied to clipboard");
+                }}
+              >
+                <Copy className="size-4"></Copy>
+              </button>
+            </div>
           </div>
+
           {/* QR Code */}
           <div className="space-y-2 p-3 bg-white rounded-md shadow-xl">
             <div
@@ -104,6 +113,7 @@ const ShortenerForm = () => {
           </div>
         </div>
       )}
+      {/* Footer */}
       <div>
         <h3 className="text-xs text-center text-gray-400">
           ©{dateYear} Tasnimul. All Rights Reserved. Developed by{" "}
