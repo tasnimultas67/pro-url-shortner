@@ -17,9 +17,9 @@ export default function Home() {
           <div className="w-11/12 md:w-7/12 m-auto bg-white p-5 md:p-8 rounded-lg shadow-xl">
             <ShortenerForm></ShortenerForm>
           </div>
-          <div>
+          {/* <div>
             <QrCodeGenerator />
-          </div>
+          </div> */}
         </div>
         <Footer />
       </div>
