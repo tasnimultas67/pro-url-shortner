@@ -72,7 +72,7 @@ const ShortenerForm = () => {
         </button>
       </form>
       {shortenedUrl && (
-        <div className="bg-gray-200 p-4 mt-4 rounded-md w-full mx-auto flex flex-col md:flex-row gap-5 items-center md:justify-between justify-center">
+        <div className="bg-gray-200 p-4 mt-4 rounded-md w-full flex flex-col md:flex-row gap-5 items-center md:justify-between justify-center">
           <div className="w-full space-y-3 flex flex-col items-stretch justify-between">
             {/* Original URL */}
             <div className="bg-white p-3 rounded-md shadow-xl text-sm space-y-2">
