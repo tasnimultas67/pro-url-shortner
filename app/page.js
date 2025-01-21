@@ -10,7 +10,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center h-[100dvh] w-full space-y-6">
           <div className="text-center">
             <h3 className="text-6xl font-semibold tracking-tight bg-clip-text text-transparent bg-gradient-to-t from-black to-blue-800">
-              Shorten your looong links :)
+              Shorten your looong URL :)
             </h3>
             <p className="text-sm ">Shorten your links with ease</p>
           </div>
