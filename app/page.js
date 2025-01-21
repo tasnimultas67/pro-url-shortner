@@ -13,7 +13,7 @@ export default function Home() {
             </h3>
             <p className="text-sm ">Shorten your links with ease</p>
           </div>
-          <div className="w-7/12 m-auto bg-white p-8 rounded-lg shadow-xl">
+          <div className="w-11/12 md:w-7/12 m-auto bg-white p-8 rounded-lg shadow-xl">
             <ShortenerForm></ShortenerForm>
           </div>
         </div>
