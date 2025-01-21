@@ -86,7 +86,10 @@ const ShortenerForm = () => {
           </div>
           {/* QR Code */}
           <div className="space-y-2 p-3 bg-gray-100 rounded-md shadow-xl">
-            <div ref={qrCodeRef} className="bg-white p-2 rounded">
+            <div
+              ref={qrCodeRef}
+              className="bg-white p-2 rounded border border-gray-300"
+            >
               <QRCodeCanvas value={shortenedUrl} size={150} level="H" />{" "}
               {/* Display size */}
             </div>
