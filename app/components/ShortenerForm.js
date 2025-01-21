@@ -2,11 +2,13 @@
 import { Copy, Download, Link2 } from "lucide-react";
 import React, { useRef, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
+import Link from "next/link";
 
 const ShortenerForm = () => {
   const [url, setUrl] = useState("");
   const [shortenedUrl, setShortenedUrl] = useState("");
   const qrCodeRef = useRef(null);
+  const dateYear = new Date().getFullYear();
 
   async function shortURL(e) {
     e.preventDefault();
@@ -49,7 +51,7 @@ const ShortenerForm = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full space-y-5">
       {/* Form */}
       <form
         onSubmit={shortURL}
@@ -102,6 +104,14 @@ const ShortenerForm = () => {
           </div>
         </div>
       )}
+      <div>
+        <h3 className="text-xs text-center text-gray-400">
+          ©{dateYear} Tasnimul. All Rights Reserved. Developed by{" "}
+          <Link href="https://tasnimul.vercel.app/" target="_blank">
+            Tasnimul Haque
+          </Link>
+        </h3>
+      </div>
     </div>
   );
 };
