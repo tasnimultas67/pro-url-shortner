@@ -3,6 +3,7 @@ import { Copy, Download, Link2 } from "lucide-react";
 import React, { useRef, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import Link from "next/link";
+import { toast } from "sonner";
 
 const ShortenerForm = () => {
   const [url, setUrl] = useState("");
@@ -100,7 +101,15 @@ const ShortenerForm = () => {
                 className="bg-blue-500 hover:bg-blue-800 text-white p-2 rounded-md"
                 onClick={() => {
                   navigator.clipboard.writeText(shortenedUrl);
-                  alert("Copied to clipboard");
+                  // alert("Copied to clipboard");
+                  toast("Copied to clipboad", {
+                    description:
+                      "Success! Your content has been copied to the clipboard",
+                    action: {
+                      label: "Undo",
+                      onClick: () => console.log("Undo"),
+                    },
+                  });
                 }}
               >
                 <Copy className="size-4"></Copy>
