@@ -1,7 +1,6 @@
 import Image from "next/image";
 import ShortenerForm from "./components/ShortenerForm";
 import Footer from "./components/Footer/Footer";
-import QrCodeGenerator from "./components/QrCodeGenerator";
 import SparklesText from "@/components/ui/sparkles-text";
 
 export default function Home() {
@@ -16,9 +15,6 @@ export default function Home() {
           <div className="w-11/12 md:w-7/12 m-auto bg-white p-5 md:p-8 md:pb-2 rounded-lg shadow-xl">
             <ShortenerForm></ShortenerForm>
           </div>
-          {/* <div>
-            <QrCodeGenerator />
-          </div> */}
         </div>
         <Footer />
       </div>
