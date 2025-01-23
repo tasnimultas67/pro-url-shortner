@@ -57,7 +57,7 @@ const ShortenerForm = () => {
       {/* Form */}
       <form
         onSubmit={shortURL}
-        className="flex justify-center items-center w-full"
+        className="flex justify-center items-center w-full flex-col md:flex-row gap-2"
       >
         <input
           className="p-2 border border-gray-300 rounded-md text-sm w-full"
