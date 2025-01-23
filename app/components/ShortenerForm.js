@@ -123,6 +123,7 @@ const ShortenerForm = () => {
           {/* QR Code */}
           <div className="space-y-2 p-3 bg-white rounded-lg shadow-xl w-fit">
             <div
+              title="Shortened URL QR Code"
               ref={qrCodeRef}
               className="bg-white p-2 rounded border border-gray-300"
             >
