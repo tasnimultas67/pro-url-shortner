@@ -102,33 +102,35 @@ const ShortenerForm = () => {
               className="bg-white p-3 rounded-md shadow-xl space-y-2 text-sm"
             >
               <p className="font-semibold">Shortened URL:</p>
-              <div>
-                <Link
-                  href={shortenedUrl}
-                  target="_blank"
-                  className="text-blue-600"
+              <div className="flex items-center justify-start gap-2 p-1 bg-blue-100 rounded-lg">
+                <button
+                  title="Copy to clipboard"
+                  className="bg-blue-500 hover:bg-blue-800 text-white p-2 rounded-md"
+                  onClick={() => {
+                    navigator.clipboard.writeText(shortenedUrl);
+                    // alert("Copied to clipboard");
+                    toast("Copied to clipboad", {
+                      description:
+                        "Success! Your content has been copied to the clipboard",
+                      action: {
+                        label: "Undo",
+                        onClick: () => console.log("Undo"),
+                      },
+                    });
+                  }}
                 >
-                  {shortenedUrl}
-                </Link>
+                  <Copy className="size-3"></Copy>
+                </button>
+                <div>
+                  <Link
+                    href={shortenedUrl}
+                    target="_blank"
+                    className="text-blue-600"
+                  >
+                    {shortenedUrl}
+                  </Link>
+                </div>
               </div>
-              <button
-                title="Copy to clipboard"
-                className="bg-blue-500 hover:bg-blue-800 text-white p-2 rounded-md"
-                onClick={() => {
-                  navigator.clipboard.writeText(shortenedUrl);
-                  // alert("Copied to clipboard");
-                  toast("Copied to clipboad", {
-                    description:
-                      "Success! Your content has been copied to the clipboard",
-                    action: {
-                      label: "Undo",
-                      onClick: () => console.log("Undo"),
-                    },
-                  });
-                }}
-              >
-                <Copy className="size-4"></Copy>
-              </button>
             </motion.div>
           </div>
           {/* QR Code */}
