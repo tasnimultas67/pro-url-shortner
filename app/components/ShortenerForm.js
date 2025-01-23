@@ -119,7 +119,7 @@ const ShortenerForm = () => {
                     });
                   }}
                 >
-                  <Copy className="size-3"></Copy>
+                  <Copy className="size-3 text-white"></Copy>
                 </button>
                 <div>
                   <Link
