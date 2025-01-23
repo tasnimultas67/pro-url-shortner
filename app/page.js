@@ -16,7 +16,6 @@ export default function Home() {
             <ShortenerForm></ShortenerForm>
           </div>
         </div>
-        <Footer />
       </div>
     </>
   );
