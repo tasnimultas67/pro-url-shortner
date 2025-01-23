@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import Link from "next/link";
 import { toast } from "sonner";
+import * as motion from "motion/react-client";
 
 const ShortenerForm = () => {
   const [url, setUrl] = useState("");
@@ -76,7 +77,12 @@ const ShortenerForm = () => {
         <div className="bg-gray-200 p-4 mt-4 rounded-md w-all gap-3 grid grid-cols-1 md:grid-cols-3 ">
           <div className=" space-y-3 md:col-span-2">
             {/* Original URL */}
-            <div className="bg-white p-3 rounded-md shadow-xl text-sm space-y-2">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
+              className="bg-white p-3 rounded-md shadow-xl text-sm space-y-2"
+            >
               <p className="font-semibold">Original URL:</p>
               <div>
                 <Link
@@ -87,9 +93,14 @@ const ShortenerForm = () => {
                   {url}
                 </Link>
               </div>
-            </div>
+            </motion.div>
             {/* Shorten URL */}
-            <div className="bg-white p-3 rounded-md shadow-xl space-y-2 text-sm">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeInOut", delay: 0.2 }}
+              className="bg-white p-3 rounded-md shadow-xl space-y-2 text-sm"
+            >
               <p className="font-semibold">Shortened URL:</p>
               <div>
                 <Link
@@ -118,10 +129,15 @@ const ShortenerForm = () => {
               >
                 <Copy className="size-4"></Copy>
               </button>
-            </div>
+            </motion.div>
           </div>
           {/* QR Code */}
-          <div className="space-y-2 p-3 bg-white rounded-lg shadow-xl w-fit">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut", delay: 0.2 }}
+            className="space-y-2 p-3 bg-white rounded-lg shadow-xl w-fit"
+          >
             <div
               title="Shortened URL QR Code"
               ref={qrCodeRef}
@@ -136,7 +152,7 @@ const ShortenerForm = () => {
             >
               <Download className="size-4"></Download> QR Code
             </button>
-          </div>
+          </motion.div>
         </div>
       )}
       {/* Footer */}
