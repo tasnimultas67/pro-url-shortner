@@ -144,27 +144,29 @@ const WifiGen = () => {
           </div>
 
           {/* Generate QR Code Button */}
-          {password && ssid && (
-            <button
-              className="bg-blue-600 text-white px-3 py-1.5 rounded-md text-sm flex items-center justify-center gap-2 hover:bg-blue-800 transition-all"
-              type="button"
-              onClick={generateQRCode}
-            >
-              <QrCode className="size-4"></QrCode> Generate QR Code
-            </button>
-          )}
+          <button
+            className={`bg-blue-600 text-white px-3 py-1.5 rounded-md text-sm flex items-center justify-center gap-2 hover:bg-blue-800 transition-all ${
+              !password || !ssid ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+            type="button"
+            onClick={generateQRCode}
+            disabled={!password || !ssid} // Properly setting the disabled attribute
+          >
+            <QrCode className="size-4" />
+            Generate QR Code
+          </button>
         </form>
       </div>
 
       {/* QR Code Preview & Buttons */}
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-end justify-end">
         {!qrCode && (
           <p className="text-xs text-center w-[100px] m-auto">
             Your Wifi QR Code will show here!
           </p>
         )}
         {qrCode && (
-          <div className="px-10 pb-10 flex flex-col items-center justify-start">
+          <div className="w-[250px] flex items-center justify-end">
             <div className="p-4 flex flex-col items-center justify-start border rounded-xl">
               <img src={qrCode} alt="WiFi QR Code" className="m-2" />
 
