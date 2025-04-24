@@ -61,27 +61,27 @@ const WifiGen = () => {
 
     // Load WiFi icon (Ensure image is in public/wifi-icon.png)
     const wifiIcon = "/WIFI-ICON.png";
-    doc.addImage(wifiIcon, "PNG", (pageWidth - 30) / 2, 20, 30, 30); // Centered at the top
+    doc.addImage(wifiIcon, "PNG", (pageWidth - 40) / 2, 50, 40, 40); // Centered at the top
 
     // Title (Centered)
     doc.setFont("helvetica", "bold");
-    doc.setFontSize(36);
-    doc.text("Connect to WiFi", pageWidth / 2, 60, { align: "center" });
+    doc.setFontSize(38);
+    doc.text("Connect to WiFi", pageWidth / 2, 100, { align: "center" });
 
     // WiFi Details (Centered)
-    doc.setFont("helvetica");
-    doc.setFontSize(16);
-    doc.text(`Network Name: ${ssid}`, pageWidth / 2, 75, { align: "center" });
-    doc.text(`Network Password: ${password}`, pageWidth / 2, 85, {
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(12);
+    doc.text(`Network Name: ${ssid}`, pageWidth / 2, 113, { align: "center" });
+    doc.text(`Network Password: ${password}`, pageWidth / 2, 120, {
       align: "center",
     });
 
     // QR Code (Centered)
-    doc.addImage(qrCode, "PNG", (pageWidth - 80) / 2, 90, 80, 80);
+    doc.addImage(qrCode, "PNG", (pageWidth - 75) / 2, 125, 75, 75);
     0;
     // Instruction (Centered)
     doc.setFontSize(14);
-    doc.text("Scan to connect!", pageWidth / 2, 180, { align: "center" });
+    doc.text("Scan to connect!", pageWidth / 2, 205, { align: "center" });
 
     // Save and download the PDF
     doc.save("wifi_qr_template.pdf");
