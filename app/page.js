@@ -13,7 +13,9 @@ export default function Home() {
         <div className="flex flex-col items-center justify-center m-auto space-y-6 ">
           <div className="text-center">
             <SparklesText text="Make Life More Easy" />
-            <p className="text-sm ">Shorten your links with ease</p>
+            <p className="text-sm ">
+              Wave in short links & instant WiFi QR codes
+            </p>
           </div>
 
           <Tabs defaultValue="link-shortner" className="w-11/12 md:w-7/12">
