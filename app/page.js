@@ -5,6 +5,7 @@ import SparklesText from "@/components/ui/sparkles-text";
 import { FlickeringGrid } from "@/components/ui/flickering-grid";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import WifiGen from "./components/WifiGen";
+import { Link, QrCode } from "lucide-react";
 
 export default function Home() {
   return (
@@ -20,8 +21,20 @@ export default function Home() {
 
           <Tabs defaultValue="link-shortner" className="w-11/12 md:w-7/12">
             <TabsList className="py-5 px-1">
-              <TabsTrigger value="link-shortner">Link Shortner</TabsTrigger>
-              <TabsTrigger value="wifiqrgen">Wifi QR Code</TabsTrigger>
+              <TabsTrigger
+                value="link-shortner"
+                className="flex items-center gap-1"
+              >
+                <Link className="size-4"></Link>Link Shortner
+              </TabsTrigger>
+              <TabsTrigger
+                value="wifiqrgen"
+                className="flex items-center gap-1"
+              >
+                {" "}
+                <QrCode className="size-4" />
+                Wifi QR Code
+              </TabsTrigger>
             </TabsList>
             <TabsContent value="link-shortner">
               <div className=" m-auto bg-white p-5 md:p-8 md:pb-2 rounded-lg shadow-xl">
