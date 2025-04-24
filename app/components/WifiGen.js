@@ -104,7 +104,9 @@ const WifiGen = () => {
         <form onSubmit={(e) => e.preventDefault()} className="space-y-3">
           {/* SSID Input */}
           <div className="space-y-1">
-            <label>Wifi Name/SSID:</label>
+            <label>
+              Wifi Name/SSID <span className="text-red-700">*</span>
+            </label>
             <input
               className="p-2 border border-gray-300 rounded-md text-sm w-full"
               type="text"
@@ -117,7 +119,9 @@ const WifiGen = () => {
 
           {/* Password Input */}
           <div className="space-y-1">
-            <label>Wifi Password:</label>
+            <label>
+              Wifi Password <span className="text-red-700">*</span>
+            </label>
             <input
               className="p-2 border border-gray-300 rounded-md text-sm w-full"
               type="text"
@@ -136,7 +140,7 @@ const WifiGen = () => {
                 <SelectValue placeholder={encryption} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="WPA">WPA/WPA2</SelectItem>
+                <SelectItem value="WPA/WPA2">WPA/WPA2</SelectItem>
                 <SelectItem value="WEP">WEP</SelectItem>
                 <SelectItem value="nopass">None</SelectItem>
               </SelectContent>
@@ -189,7 +193,7 @@ const WifiGen = () => {
                 onClick={generatePDF}
               >
                 <Copy className="size-4" />
-                Generate Full Template
+                Download Full Template
               </button>
             </div>
           </div>
