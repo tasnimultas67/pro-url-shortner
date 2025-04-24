@@ -16,12 +16,12 @@ export default function Home() {
             <p className="text-sm ">Shorten your links with ease</p>
           </div>
 
-          <Tabs defaultValue="link-short" className="w-11/12 md:w-7/12">
-            <TabsList>
-              <TabsTrigger value="link-short">Link Short</TabsTrigger>
-              <TabsTrigger value="wifiqrgen">Wifi QR</TabsTrigger>
+          <Tabs defaultValue="link-shortner" className="w-11/12 md:w-7/12">
+            <TabsList className="py-5 px-1">
+              <TabsTrigger value="link-shortner">Link Shortner</TabsTrigger>
+              <TabsTrigger value="wifiqrgen">Wifi QR Code</TabsTrigger>
             </TabsList>
-            <TabsContent value="link-short">
+            <TabsContent value="link-shortner">
               <div className=" m-auto bg-white p-5 md:p-8 md:pb-2 rounded-lg shadow-xl">
                 <ShortenerForm></ShortenerForm>
               </div>

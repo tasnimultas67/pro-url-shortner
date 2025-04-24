@@ -149,7 +149,7 @@ const WifiGen = () => {
       <div className="flex flex-col items-center justify-center">
         {!qrCode && (
           <p className="text-xs text-center w-[100px] m-auto">
-            Your Wifi QR Code will be show here!
+            Your Wifi QR Code will show here!
           </p>
         )}
         {qrCode && (
