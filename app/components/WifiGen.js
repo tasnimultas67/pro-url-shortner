@@ -77,11 +77,11 @@ const WifiGen = () => {
     });
 
     // QR Code (Centered)
-    doc.addImage(qrCode, "PNG", (pageWidth - 90) / 2, 100, 90, 90);
-
+    doc.addImage(qrCode, "PNG", (pageWidth - 80) / 2, 90, 80, 80);
+    0;
     // Instruction (Centered)
     doc.setFontSize(14);
-    doc.text("Scan to connect!", pageWidth / 2, 200, { align: "center" });
+    doc.text("Scan to connect!", pageWidth / 2, 180, { align: "center" });
 
     // Save and download the PDF
     doc.save("wifi_qr_template.pdf");
