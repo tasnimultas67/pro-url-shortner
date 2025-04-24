@@ -132,7 +132,7 @@ const WifiGen = () => {
           <div className="space-y-1">
             <label>Encryption Type:</label>
             <Select onValueChange={(value) => setEncryption(value)}>
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger className="w-[180px] bg-white">
                 <SelectValue placeholder={encryption} />
               </SelectTrigger>
               <SelectContent>
