@@ -88,7 +88,7 @@ const WifiGen = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2">
+    <div className="grid grid-cols-1 md:grid-cols-2 justify-items-stretch bg-slate-500">
       <div>
         <form onSubmit={(e) => e.preventDefault()} className="space-y-3">
           {/* SSID Input */}
