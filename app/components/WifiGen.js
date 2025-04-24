@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Copy, Download, Link2 } from "lucide-react";
+import { Copy, Download, Link2, QrCode } from "lucide-react";
 
 const WifiGen = () => {
   const [ssid, setSsid] = useState("");
@@ -133,18 +133,25 @@ const WifiGen = () => {
           </div>
 
           {/* Generate QR Code Button */}
-          <button
-            className="bg-blue-600 text-white px-3 py-1.5 rounded-md text-sm"
-            type="button"
-            onClick={generateQRCode}
-          >
-            Generate QR Code
-          </button>
+          {password && ssid && (
+            <button
+              className="bg-blue-600 text-white px-3 py-1.5 rounded-md text-sm flex items-center justify-center gap-2 hover:bg-blue-800 transition-all"
+              type="button"
+              onClick={generateQRCode}
+            >
+              <QrCode className="size-4"></QrCode> Generate QR Code
+            </button>
+          )}
         </form>
       </div>
 
       {/* QR Code Preview & Buttons */}
-      <div>
+      <div className="flex flex-col items-center justify-center">
+        {!qrCode && (
+          <p className="text-xs text-center w-[100px] m-auto">
+            Your Wifi QR Code will be show here!
+          </p>
+        )}
         {qrCode && (
           <div className="px-10 pb-10 flex flex-col items-center justify-start">
             <div className="p-4 flex flex-col items-center justify-start border rounded-xl">
@@ -162,7 +169,7 @@ const WifiGen = () => {
 
               {/* Generate Full Template Button */}
               <button
-                className="flex items-center justify-center gap-2 text-xs bg-green-500 hover:bg-green-800 transition-all text-white px-4 py-2 rounded-md mt-2"
+                className="flex items-center justify-center gap-2 text-xs bg-blue-500 hover:bg-blue-800 transition-all text-white px-4 py-2 rounded-md mt-2"
                 type="button"
                 onClick={generatePDF}
               >
