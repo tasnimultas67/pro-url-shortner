@@ -39,17 +39,14 @@ export default function Home() {
             {/* LINK SHORTNER */}
             <TabsContent
               value="link-shortner"
-              className="bg-[#EFF1F5] rounded-xl shadow-xl "
+              className="bg-[#EFF1F5] rounded-xl"
             >
               <div className=" m-auto p-5 md:p-8 md:pb-2 ">
                 <ShortenerForm></ShortenerForm>
               </div>
             </TabsContent>
             {/* WIFI QR CODE */}
-            <TabsContent
-              value="wifiqrgen"
-              className="bg-[#EFF1F5] rounded-xl shadow-xl"
-            >
+            <TabsContent value="wifiqrgen" className="bg-[#EFF1F5] rounded-xl">
               <div className=" m-auto p-5 md:p-8">
                 <WifiGen></WifiGen>
               </div>
