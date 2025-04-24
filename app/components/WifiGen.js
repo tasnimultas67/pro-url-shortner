@@ -18,6 +18,8 @@ const WifiGen = () => {
   const [encryption, setEncryption] = useState("WPA");
   const [qrCode, setQrCode] = useState("");
 
+  const dateYear = new Date().getFullYear();
+
   // Generate the QR code
   const generateQRCode = async () => {
     const wifiDetails = `WIFI:T:${encryption};S:${ssid};P:${password};;`;
@@ -82,6 +84,15 @@ const WifiGen = () => {
     // Instruction (Centered)
     doc.setFontSize(14);
     doc.text("Scan to connect!", pageWidth / 2, 205, { align: "center" });
+
+    // Copyright (Centered)
+    doc.setFontSize(8);
+    doc.text(
+      `© ${dateYear} Tasnimul Haque | Proudly developed at www.tinywaveqr.vercel.app`,
+      pageWidth / 2, // Centered horizontally
+      290, // Adjusted Y position
+      { align: "center" }
+    );
 
     // Save and download the PDF
     doc.save("wifi_qr_template.pdf");
