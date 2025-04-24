@@ -11,12 +11,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Copy, Download, Link2, QrCode } from "lucide-react";
+import { Switch } from "@/components/ui/switch";
 
 const WifiGen = () => {
   const [ssid, setSsid] = useState("");
   const [password, setPassword] = useState("");
   const [encryption, setEncryption] = useState("WPA");
   const [qrCode, setQrCode] = useState("");
+  const [passChecked, setPassUnChecked] = useState("true");
 
   const dateYear = new Date().getFullYear();
 
@@ -51,50 +53,43 @@ const WifiGen = () => {
   const generatePDF = () => {
     if (!qrCode || !ssid) return;
 
-    // Initialize PDF with A4 size
     const doc = new jsPDF({
       orientation: "portrait",
       unit: "mm",
       format: "a4",
     });
 
-    // Page dimensions (A4 size: 210mm × 297mm)
     const pageWidth = doc.internal.pageSize.getWidth();
-
-    // Load WiFi icon (Ensure image is in public/wifi-icon.png)
     const wifiIcon = "/WIFI-ICON.png";
-    doc.addImage(wifiIcon, "PNG", (pageWidth - 40) / 2, 50, 40, 40); // Centered at the top
 
-    // Title (Centered)
+    doc.addImage(wifiIcon, "PNG", (pageWidth - 40) / 2, 50, 40, 40);
     doc.setFont("helvetica", "bold");
     doc.setFontSize(38);
     doc.text("Connect to WiFi", pageWidth / 2, 100, { align: "center" });
 
-    // WiFi Details (Centered)
     doc.setFont("helvetica", "normal");
     doc.setFontSize(12);
     doc.text(`Network Name: ${ssid}`, pageWidth / 2, 113, { align: "center" });
-    doc.text(`Network Password: ${password}`, pageWidth / 2, 120, {
-      align: "center",
-    });
 
-    // QR Code (Centered)
+    if (passChecked) {
+      doc.text(`Network Password: ${password}`, pageWidth / 2, 120, {
+        align: "center",
+      });
+    }
+
     doc.addImage(qrCode, "PNG", (pageWidth - 75) / 2, 125, 75, 75);
-    0;
-    // Instruction (Centered)
     doc.setFontSize(14);
     doc.text("Scan to connect!", pageWidth / 2, 205, { align: "center" });
 
-    // Copyright (Centered)
+    const dateYear = new Date().getFullYear();
     doc.setFontSize(8);
     doc.text(
       `© ${dateYear} Tasnimul Haque | Proudly developed at www.tinywaveqr.vercel.app`,
-      pageWidth / 2, // Centered horizontally
-      290, // Adjusted Y position
+      pageWidth / 2,
+      290,
       { align: "center" }
     );
 
-    // Save and download the PDF
     doc.save("wifi_qr_template.pdf");
   };
 
@@ -186,7 +181,17 @@ const WifiGen = () => {
                 Download QR Code
               </button>
 
-              {/* Generate Full Template Button */}
+              {/* Show password in template */}
+              <div className="flex items-center space-x-2 text-xs mt-2">
+                <Switch
+                  id="show-password"
+                  checked={passChecked}
+                  onCheckedChange={() => setPassUnChecked(!passChecked)}
+                />
+                <label htmlFor="show-password">Show password</label>
+              </div>
+
+              {/* Download Full Template Button */}
               <button
                 className="flex items-center justify-center gap-2 text-xs bg-blue-500 hover:bg-blue-800 transition-all text-white px-4 py-2 rounded-md mt-2"
                 type="button"
