@@ -104,7 +104,7 @@ const WifiGen = () => {
         <form onSubmit={(e) => e.preventDefault()} className="space-y-3">
           {/* SSID Input */}
           <div className="space-y-1">
-            <label>WIFI Name/SSID:</label>
+            <label>Wifi Name/SSID:</label>
             <input
               className="p-2 border border-gray-300 rounded-md text-sm w-full"
               type="text"
