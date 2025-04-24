@@ -159,11 +159,13 @@ const WifiGen = () => {
       </div>
 
       {/* QR Code Preview & Buttons */}
-      <div className="flex flex-col items-end justify-end">
+      <div className="flex flex-col items-center justify-center">
         {!qrCode && (
-          <p className="text-xs text-center w-[100px] m-auto">
-            Your Wifi QR Code will show here!
-          </p>
+          <div className="w-[250px]">
+            <p className="text-xs text-center">
+              Your Wifi QR Code will show here!
+            </p>
+          </div>
         )}
         {qrCode && (
           <div className="w-[250px] flex items-center justify-end">
