@@ -20,7 +20,7 @@ export default function Home() {
           </div>
 
           <Tabs defaultValue="link-shortner" className="w-11/12 md:w-7/12">
-            <TabsList className="py-5 px-1">
+            <TabsList className="">
               <TabsTrigger
                 value="link-shortner"
                 className="flex items-center gap-1"
